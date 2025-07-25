@@ -1,17 +1,19 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.36.1.
+-- This file has been generated from package.yaml by hpack version 0.37.0.
 --
 -- see: https://github.com/sol/hpack
 
 name:           imageConverter
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/imageConverter#readme>
-homepage:       https://github.com/githubuser/imageConverter#readme
-bug-reports:    https://github.com/githubuser/imageConverter/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2025 Author name here
+synopsis:       simple image formats converter
+description:    simple image formats converter
+category:       system
+homepage:       https://github.com/ruzen42/imageConverter#readme
+bug-reports:    https://github.com/ruzen42/imageConverter/issues
+author:         Jaroslav Mihajlenko
+maintainer:     malledeferlive@gmail.com
+copyright:      2025 Jaroslav Mihajlenko
 license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple
@@ -21,7 +23,7 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/imageConverter
+  location: https://github.com/ruzen42/imageConverter
 
 library
   exposed-modules:
@@ -34,7 +36,9 @@ library
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base >=4.7 && <5
+      JuicyPixels >=3.3.8 && <=3.3.9
+    , base >=4.12.0.0 && <4.23
+    , filepath >=1.5.2.0 && <=1.5.4.0
   default-language: Haskell2010
 
 executable imageConverter-exe
@@ -47,7 +51,9 @@ executable imageConverter-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      JuicyPixels >=3.3.8 && <=3.3.9
+    , base >=4.12.0.0 && <4.23
+    , filepath >=1.5.2.0 && <=1.5.4.0
     , imageConverter
   default-language: Haskell2010
 
@@ -62,6 +68,8 @@ test-suite imageConverter-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      JuicyPixels >=3.3.8 && <=3.3.9
+    , base >=4.12.0.0 && <4.23
+    , filepath >=1.5.2.0 && <=1.5.4.0
     , imageConverter
   default-language: Haskell2010

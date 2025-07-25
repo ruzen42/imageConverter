@@ -1,26 +1,23 @@
 name:                imageConverter
 version:             0.1.0.0
-github:              "githubuser/imageConverter"
+github:              "ruzen42/imageConverter"
 license:             BSD-3-Clause
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2025 Author name here"
+author:              "Jaroslav Mihajlenko"
+maintainer:          "malledeferlive@gmail.com"
+copyright:           "2025 Jaroslav Mihajlenko"
 
 extra-source-files:
 - README.md
 - CHANGELOG.md
+synopsis:            simple image formats converter
+category:            system
 
-# Metadata used when publishing your package
-# synopsis:            Short description of your package
-# category:            Web
-
-# To avoid duplicated efforts in documentation and dealing with the
-# complications of embedding Haddock markup inside cabal files, it is
-# common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/imageConverter#readme>
+description:         simple image formats converter
 
 dependencies:
-- base >= 4.7 && < 5
+- base >= 4.12.0.0 && < 4.23
+- JuicyPixels >= 3.3.8 && <= 3.3.9
+- filepath >= 1.5.2.0 && <= 1.5.4.0
 
 ghc-options:
 - -Wall

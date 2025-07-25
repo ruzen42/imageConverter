@@ -30,12 +30,13 @@ ghc-options:
 - -Wmissing-home-modules
 - -Wpartial-fields
 - -Wredundant-constraints
+- -O2
 
 library:
   source-dirs: src
 
 executables:
-  imageConverter-exe:
+  imageConverter:
     main:                Main.hs
     source-dirs:         app
     ghc-options:

@@ -1,4 +1,4 @@
-module Lib (convert) where
+module ImageConvert (convert) where
 
 import System.FilePath (takeExtension)
 import Data.Char (toLower)

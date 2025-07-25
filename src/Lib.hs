@@ -15,7 +15,6 @@ getFormat filePath =
     ".jpeg" -> Just Jpeg 
     ".png"  -> Just Png
     ".gif"  -> Just Gif
-    ".svg"  -> Just Svg 
     _       -> Nothing 
 
 readImageFile :: FilePath -> IO (Either String DynamicImage)

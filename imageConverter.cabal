@@ -5,7 +5,7 @@ cabal-version: 2.2
 -- see: https://github.com/sol/hpack
 
 name:           imageConverter
-version:        0.1.0.0
+version:        0.1.1.0
 synopsis:       simple image formats converter
 description:    simple image formats converter
 category:       system

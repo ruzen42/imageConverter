@@ -4,24 +4,33 @@ import ImageConvert
 import Options.Applicative
 
 data Options = Options 
-  { sourcePath :: FilePath
-  , targetPath :: FilePath 
+  { sourcePath   :: FilePath
+  , targetPath   :: FilePath 
+  , maybeQuality :: Maybe Int
   }
 
 main :: IO ()
 main = do
-  opts <- execParser parserInfo 
-  ImageConvert.convert (sourcePath opts) (targetPath opts)
-
+  options <- execParser parserInfo 
+  ImageConvert.convert (sourcePath options) (targetPath options) (maybeQuality options)
 
 optionsParser = Options
   <$> argument str
-      ( metavar "SOURCE"           -- Отображаемое имя в справке (help message)
-     <> help "Path to the input image file (e.g., image.jpg)" -- Описание аргумента
+      ( metavar "sourceFile"           
+     <> help "Path to the input image file (e.g., image.jpg)" 
       )
   <*> argument str
-      ( metavar "TARGET"           -- Отображаемое имя в справке
-     <> help "Path to the output image file (e.g., output.png)" -- Описание аргумента
+      ( metavar "targetFile"           
+     <> help "Path to the output image file (e.g., output.png)" 
+      )
+  <*> optional ( 
+          option auto 
+          ( long "quality" 
+         <> short 'q'     
+         <> metavar "INT"
+         <> help "JPEG quality (0-100, default 80 if not specified)" 
+         <> showDefault    
+          )
       )
 
 parserInfo :: ParserInfo Options
